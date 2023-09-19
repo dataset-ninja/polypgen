@@ -11,6 +11,7 @@ from supervisely.io.fs import (
     get_file_name,
     get_file_name_with_ext,
 )
+from supervisely.io.json import load_json_file
 from tqdm import tqdm
 
 import src.settings as s
@@ -85,11 +86,16 @@ def convert_and_upload_supervisely_project(
     images_folder = "images"
     masks_folder = "masks"
     batch_size = 30
+    tag_dict = load_json_file("tag_json.json")
+
+    def get_key(dict, value):
+        for k, v in dict.items():
+            if v == value:
+                return k
 
     def create_ann(image_path):
         labels = []
         tags = []
-
         image_name = get_file_name_with_ext(image_path)
         image_np = sly.imaging.image.read(image_path)[:, :, 0]
         img_height = image_np.shape[0]

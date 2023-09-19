@@ -3,6 +3,8 @@ __pycache__
 .venv/
 venv/
 PolypGen2021_MultiCenterData_v3/
+PolypGen2021_original/
+tag_info.py
 tmp/
 APP_DATA/
 dataset_tools/
