@@ -1,12 +1,20 @@
-import supervisely as sly
 import os
-from dataset_tools.convert import unpack_if_archive
-import src.settings as s
 from urllib.parse import unquote, urlparse
-from supervisely.io.fs import get_file_name, get_file_size
-import shutil
 
+import supervisely as sly
+from cv2 import connectedComponents
+from dataset_tools.convert import unpack_if_archive
+from supervisely.io.fs import (
+    dir_exists,
+    file_exists,
+    get_file_ext,
+    get_file_name,
+    get_file_name_with_ext,
+)
 from tqdm import tqdm
+
+import src.settings as s
+
 
 def download_dataset(teamfiles_dir: str) -> str:
     """Use it for large datasets to convert them on the instance"""
@@ -29,7 +37,7 @@ def download_dataset(teamfiles_dir: str) -> str:
             total=fsize,
             unit="B",
             unit_scale=True,
-        ) as pbar:        
+        ) as pbar:
             api.file.download(team_id, teamfiles_path, local_path, progress_cb=pbar)
         dataset_path = unpack_if_archive(local_path)
 
@@ -57,7 +65,8 @@ def download_dataset(teamfiles_dir: str) -> str:
 
         dataset_path = storage_dir
     return dataset_path
-    
+
+
 def count_files(path, extension):
     count = 0
     for root, dirs, files in os.walk(path):
@@ -65,21 +74,88 @@ def count_files(path, extension):
             if file.endswith(extension):
                 count += 1
     return count
-    
+
+
 def convert_and_upload_supervisely_project(
     api: sly.Api, workspace_id: int, project_name: str
 ) -> sly.ProjectInfo:
     ### Function should read local dataset and upload it to Supervisely project, then return project info.###
-    raise NotImplementedError("The converter should be implemented manually.")
+    dataset_path = "PolypGen2021_MultiCenterData_v3"
+    ds_name = "ds"
+    images_folder = "images"
+    masks_folder = "masks"
+    batch_size = 30
 
-    # dataset_path = "/local/path/to/your/dataset" # general way
-    # dataset_path = download_dataset(teamfiles_dir) # for large datasets stored on instance
+    def create_ann(image_path):
+        labels = []
+        tags = []
 
-    # ... some code here ...
+        image_name = get_file_name_with_ext(image_path)
+        image_np = sly.imaging.image.read(image_path)[:, :, 0]
+        img_height = image_np.shape[0]
+        img_wight = image_np.shape[1]
+        if image_name.startswith("C"):
+            tag = sly.Tag(meta=tags_inst, value=image_name[:2])
+            tags.append(tag)
+        if "seq" in image_name:
+            name_elements = image_name.split("_")
+            for i, el in enumerate(name_elements):
+                if "C" in el and len(el) == 2:
+                    tag = sly.Tag(meta=tags_inst, value=el)
+                    tags.append(tag)
+                if i == 0 and "seq" in el:
+                    tag = sly.Tag(meta=tags_seq, value=el)
+                    tags.append(tag)
+        if subfolder == "positive":
+            tag = sly.Tag(positive)
+            tags.append(tag)
+            mask_path = os.path.join(masks_path, image_name)
+            mask_np = sly.imaging.image.read(mask_path)[:, :, 0]
+            mask = mask_np == 255
+            ret, curr_mask = connectedComponents(mask.astype("uint8"), connectivity=8)
+            for i in range(1, ret):
+                obj_mask = curr_mask == i
+                curr_bitmap = sly.Bitmap(obj_mask)
+                if curr_bitmap.area > 50:
+                    curr_label = sly.Label(curr_bitmap, obj_class)
+                    labels.append(curr_label)
+        else:
+            tag = sly.Tag(negative)
+            tags.append(tag)
 
-    # sly.logger.info('Deleting temporary app storage files...')
-    # shutil.rmtree(storage_dir)
+        return sly.Annotation(img_size=(img_height, img_wight), labels=labels, img_tags=tags)
 
-    # return project
+    obj_class = sly.ObjClass("polyp", sly.Bitmap)
+    tags_seq = sly.TagMeta("sequence", sly.TagValueType.ANY_STRING)
+    tags_inst = sly.TagMeta("institute", sly.TagValueType.ANY_STRING)
+    positive = sly.TagMeta("positive", sly.TagValueType.NONE)
+    negative = sly.TagMeta("negative", sly.TagValueType.NONE)
+    tag_metas = [tags_seq, tags_inst, positive, negative]
+    project = api.project.create(workspace_id, project_name, change_name_if_conflict=True)
+    meta = sly.ProjectMeta(obj_classes=[obj_class], tag_metas=tag_metas)
+    api.project.update_meta(project.id, meta.to_json())
 
+    dataset = api.dataset.create(project.id, ds_name, change_name_if_conflict=True)
 
+    for subfolder in os.listdir(dataset_path):
+        images_path = os.path.join(dataset_path, subfolder, images_folder)
+        if dir_exists(images_path):
+            masks_path = os.path.join(dataset_path, subfolder, masks_folder)
+            images_names = os.listdir(images_path)
+
+            progress = sly.Progress("Create dataset {}".format(ds_name), len(images_names))
+
+            for img_names_batch in sly.batched(images_names, batch_size=batch_size):
+                images_pathes_batch = [
+                    os.path.join(images_path, image_name) for image_name in img_names_batch
+                ]
+
+                img_infos = api.image.upload_paths(dataset.id, img_names_batch, images_pathes_batch)
+                img_ids = [im_info.id for im_info in img_infos]
+
+                anns_batch = [create_ann(image_path) for image_path in images_pathes_batch]
+                api.annotation.upload_anns(img_ids, anns_batch)
+
+                progress.iters_done_report(len(img_names_batch))
+
+    return project
