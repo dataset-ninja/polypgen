@@ -2,38 +2,35 @@ Polyps in the colon are widely known cancer precursors identified by colonoscopy
 
 PolypGen data was collected from 6 different centres. More than 300 unique patient videos/frames were used for this study. The general purpose of this diverse dataset is to allow robust design of deep learning models and their validation to assess their generalizability capability. In this context, authors have proposed different dataset configurations for training and out-of-sample validation and proposed unique generalization assessment metrics to reveal the strength of deep learning methods. Below authors provide a comprehensive description of dataset collection, annotation strategies and its quality, ethical guidelines and metric evaluation strategies.
 
-| Dataset             | Findings                                   | Size                   | Availability            |
-|---------------------|--------------------------------------------|------------------------|--------------------------|
-| Kvasir-SEG16        | Polyps                                     | 1000 images†            | Open academic             |
-| HyperKvasir17       | GI findings including polyps               | 110,079 images and 374 videos | Open academic             |
-| Kvasir-Capsule18    | GI findings including polyps               | 4,741,504 images        | Open academic             |
-| CVC-ColonDB19       | Polyps                                     | 380 images††            | By request•              |
-| ETIS-Larib Polyp DB20 | Polyps                                 | 196 images†              | Open academic             |
-| EDD202015, 21       | GI lesions including polyps                | 386 images              | Open academic             |
-| CVC-ClinicDB22      | Polyps                                     | 612 images†             | Open academic             |
-| CVC-VideoClinicDB23 | Polyps                                   | 11,954 images†          | By request•              |
-| ASU-Mayo polyp database24 | Polyps                           | 18,781 images†          | By request•              |
-| KID25               | Angiectasia, bleeding, inflammations      | 2371 images, 47 videos  | Open academic•            |
-| Atlas of GI Endoscope12 | GI lesions                         | 1295 images             | Unknown•                  |
-| El salvador atlas11 | GI lesions                             | 5071 video clips        | Open academic♣️           |
-| PolypGen (Ours)26, 27 | Multi-centre colon polyps              | 1537 images†& 2225 video sequence | Open academic             |
+
+| Dataset                   | Findings                             | Size                               | Availability      |
+| --------------------------- | -------------------------------------- | ------------------------------------ | ------------------- |
+| Kvasir-SEG16              | Polyps                               | 1000 images†                      | Open academic     |
+| HyperKvasir17             | GI findings including polyps         | 110,079 images and 374 videos      | Open academic     |
+| Kvasir-Capsule18          | GI findings including polyps         | 4,741,504 images                   | Open academic     |
+| CVC-ColonDB19             | Polyps                               | 380 images††                     | By request•      |
+| ETIS-Larib Polyp DB20     | Polyps                               | 196 images†                       | Open academic     |
+| EDD202015, 21             | GI lesions including polyps          | 386 images                         | Open academic     |
+| CVC-ClinicDB22            | Polyps                               | 612 images†                       | Open academic     |
+| CVC-VideoClinicDB23       | Polyps                               | 11,954 images†                    | By request•      |
+| ASU-Mayo polyp database24 | Polyps                               | 18,781 images†                    | By request•      |
+| KID25                     | Angiectasia, bleeding, inflammations | 2371 images, 47 videos             | Open academic•   |
+| Atlas of GI Endoscope12   | GI lesions                           | 1295 images                        | Unknown•         |
+| El salvador atlas11       | GI lesions                           | 5071 video clips                   | Open academic♣️ |
+| PolypGen (Ours)26, 27     | Multi-centre colon polyps            | 1537 images†& 2225 video sequence | Open academic     |
 
 <i> Table 1. An overview of existing gastrointestinal (GI) lesion datasets including polyps: number of images or videos
 along with the availability type is provided. </i>
 
-| Centre                                  | System info                                | Ethical approval     | Patient consenting type       |
-|----------------------------------------|--------------------------------------------|----------------------|------------------------------|
-| Ambroise Paré Hospital, Paris, France | Olympus Exera 195                          | N° IDRCB: 2019-A01602-55 | Endospectral study           |
-|                                        |                                            |                      |                              |
-| Istituto Oncologico Veneto, Padova, Italy | Olympus endoscope H190                    | NA                   | Generic patients consent     |
-|                                        |                                            |                      |                              |
-| Centro Riferimento Oncologico, IRCCS, Italy | Olympus VG-165, CV180, H185              | NA                   | Generic patients consent     |
-|                                        |                                            |                      |                              |
-| Oslo University Hospital, Oslo, Norway  | Olympus Evis Exera III, CF 190           | Exempted†            | Written informed consent    |
-|                                        |                                            |                      |                              |
-| John Radcliffe Hospital, Oxford, UK     | GIF-H260Z, EVIS Lucera CV260             | REC Ref: 16/YH/0247 | Universal consent           |
-|                                        |                                            |                      |                              |
-| University of Alexandria, Alexandria, Egypt | Olympus Exera 160AL, 180AL               | NA                   | Written informed consent    |
+
+| Centre                                      | System info                    | Ethical approval          | Patient consenting type  |
+| --------------------------------------------- | -------------------------------- | --------------------------- | -------------------------- |
+| Ambroise Paré Hospital, Paris, France      | Olympus Exera 195              | N° IDRCB: 2019-A01602-55 | Endospectral study       |
+| Istituto Oncologico Veneto, Padova, Italy   | Olympus endoscope H190         | NA                        | Generic patients consent |
+| Centro Riferimento Oncologico, IRCCS, Italy | Olympus VG-165, CV180, H185    | NA                        | Generic patients consent |
+| Oslo University Hospital, Oslo, Norway      | Olympus Evis Exera III, CF 190 | Exempted†                | Written informed consent |
+| John Radcliffe Hospital, Oxford, UK         | GIF-H260Z, EVIS Lucera CV260   | REC Ref: 16/YH/0247       | Universal consent        |
+| University of Alexandria, Alexandria, Egypt | Olympus Exera 160AL, 180AL     | NA                        | Written informed consent |
 
 <i> Table 2. Data collection information for each centre: Data acquisition system and patient consenting information. </i>
 
@@ -53,7 +50,7 @@ An overview of the number of samples comprising positive samples and negative sa
 
 Authors have provided both still image frames and continuous short video sequence data with their corresponding annotations. The positive and negative samples in the dataset of the polyp generalisation (PolypGen) are further detailed below.
 
-[Fig.3](https://i.ibb.co/W3WS0sM/2023-09-19-205159.png)
+![Fig.3](https://i.ibb.co/W3WS0sM/2023-09-19-205159.png)
 
 <i> Figure 3. Sample polyp annotations from each centre: Segmentation area with boundaries and corresponding bounding box/boxes overlaid images from all six centres. Samples include both small sized polyp (< 10000 pixels) including some flat polyp samples to large sized (≥ 40000 pixels) polyps and polyps during resection procedure such as polyps with blue dyes </i>
 
@@ -61,31 +58,32 @@ Authors have provided both still image frames and continuous short video sequenc
 
 Positive samples consist of video frames from the patient with a diagnosed polyp case. The selected frames may or may not have the polyp in it but may be located near to the chosen frame. Nevertheless, a majority of these frames consists of at least one polyp in the frame. For the sequence positive samples, the continuity of the appearance and disappearance of the polyp similar to real scenario has been taken into account and thus these frames can have a mixture of polyp instances and frames with normal mucosa. Table 3 is provided to detail the characteristics of 23 sequence data included in our dataset. It can be observed from Figure 4 that varied sized polyps are included in the dataset with variable view points, occlusions and instruments. Exemplary pixel-level annotations of positive polyp samples for each centre and their corresponding bounding boxes are presented in Fig. 3.
 
-| Sequence | Description                                   | Artifact                                    |
-|----------|-----------------------------------------------|---------------------------------------------|
-| seq1     | Normal mucosa                                | Light reflections; green patch              |
-| seq2     | 5 mm polyp at 6 o’clock                     | Partially covered with stool; reflections; green patch |
-| seq3     | Polyp at distance, 4 o’clock                | Light reflection from liquid; green patch   |
-| seq4     | 2-3 mm polyp                                 | Liquid covering half of the image; green patch |
-| seq5     | 5 mm polyp catched by a snare               | Partial occlusion by biopsy instrument     |
-| seq6     | Polyp covering half of the circumference    | Cap; green patch                            |
-| seq7     | Normal mucosa                                | Light reflection; some remnant stool; green patch |
-| seq8     | Typical flat cancer                          | Light reflection; green patch              |
-| seq9     | 2 mm polyp at 2 o’clock                     | Light reflection; green patch              |
-| seq10    | Subtle small protrusions                     | Some remnant stool                         |
-| seq11    | Polyp at 2-3 o’clock                        | Light reflections in the periphery         |
-| seq12    | Dye lifted 4-5 mm polyp                     | Low contrast                                |
-| seq13    | 6-7 mm polyp catched with a snare           | Low contrast; small reflections             |
-| seq14    | Paris 1 p polyp, large long stalk, JNET 2a  | Lifted by Indigo Carmine, snare placed around the stalk |
-| seq15    | Paris 1 s JNET2a polyp and 1 Paris 1 sp to the left | Lifted by Indigo Carmine              |
-| seq16    | Paris 1 p polyp, large long stalk, JNET 2a  | Lifted by Indigo Carmine                   |
-| seq17    | Paris 1 sp polyp                            | Light reflections make surface assessment impossible |
-| seq18    | Difficult interpretation                     | Blurry image and reduced view               |
-| seq19    | Paris 1 p polyp, large long stalk, JNET 2a  | Less contrast and slightly occluded         |
-| seq20    | Half of the polyp visible                   | Blurry image, with some blood on the mucosa |
-| seq21    | Two adenomas polyp                          | Blurry image                                |
-| seq22    | Adenomas polyp                              | Blurry image makes exact diagnosis impossible |
-| seq23    | Serrated polyp                               | Perfect clean mucosa, minor light reflections |
+
+| Sequence | Description                                         | Artifact                                                |
+| ---------- | ----------------------------------------------------- | --------------------------------------------------------- |
+| seq1     | Normal mucosa                                       | Light reflections; green patch                          |
+| seq2     | 5 mm polyp at 6 o’clock                            | Partially covered with stool; reflections; green patch  |
+| seq3     | Polyp at distance, 4 o’clock                       | Light reflection from liquid; green patch               |
+| seq4     | 2-3 mm polyp                                        | Liquid covering half of the image; green patch          |
+| seq5     | 5 mm polyp catched by a snare                       | Partial occlusion by biopsy instrument                  |
+| seq6     | Polyp covering half of the circumference            | Cap; green patch                                        |
+| seq7     | Normal mucosa                                       | Light reflection; some remnant stool; green patch       |
+| seq8     | Typical flat cancer                                 | Light reflection; green patch                           |
+| seq9     | 2 mm polyp at 2 o’clock                            | Light reflection; green patch                           |
+| seq10    | Subtle small protrusions                            | Some remnant stool                                      |
+| seq11    | Polyp at 2-3 o’clock                               | Light reflections in the periphery                      |
+| seq12    | Dye lifted 4-5 mm polyp                             | Low contrast                                            |
+| seq13    | 6-7 mm polyp catched with a snare                   | Low contrast; small reflections                         |
+| seq14    | Paris 1 p polyp, large long stalk, JNET 2a          | Lifted by Indigo Carmine, snare placed around the stalk |
+| seq15    | Paris 1 s JNET2a polyp and 1 Paris 1 sp to the left | Lifted by Indigo Carmine                                |
+| seq16    | Paris 1 p polyp, large long stalk, JNET 2a          | Lifted by Indigo Carmine                                |
+| seq17    | Paris 1 sp polyp                                    | Light reflections make surface assessment impossible    |
+| seq18    | Difficult interpretation                            | Blurry image and reduced view                           |
+| seq19    | Paris 1 p polyp, large long stalk, JNET 2a          | Less contrast and slightly occluded                     |
+| seq20    | Half of the polyp visible                           | Blurry image, with some blood on the mucosa             |
+| seq21    | Two adenomas polyp                                  | Blurry image                                            |
+| seq22    | Adenomas polyp                                      | Blurry image makes exact diagnosis impossible           |
+| seq23    | Serrated polyp                                      | Perfect clean mucosa, minor light reflections           |
 
 <i> Table 3. Positive sample sequence summarised attribute: Total of 23 sequences are provided as positive sample sequence for patients with polyp instances during colonoscopy examination. Here JNET refers to Japan NBI Expert Team classification score. These sequences depict different sized polyps and location with different artifacts and varying visibility. Sequences referring to one selected image is shown in Fig. 4. </i>
 
@@ -118,35 +116,36 @@ A summary description is provided in Table 3. Parts of images have been cropped 
 
 Each of these annotated masks were reviewed by expert gastroenterologists. During this review process, a binary score was provided by the experts depending on whether the annotations were clinically acceptable or not. Some of the experts also provided feedback on the annotation and these images were placed into ambiguous category for further rectification based on expert feedback. These ambiguous category was then jointly annotated by two researchers and further sent for review to one expert. The outcome of these quality checks are provided in Figure 6. It can be observed that large fraction (30.5%) of annotations were rejected (excluding ambiguous batch, total annotations were 2213, among which only 1537 were accepted and 676 frames were rejected). Similarly, the ambiguous batch that included correction of annotations after the first review also recorded 34.17% rejected frames on the second review.
 
-| Sequence   | Description                              | Artifact                                   |
-|------------|------------------------------------------|--------------------------------------------|
-| seq1_neg   | Normal vascular pattern                   | Light reflections in the periphery; not clean lens |
-| seq2_neg   | Normal vascular pattern                   | Contracted bowel; light reflections        |
-| seq3_neg   | Mucosa not satisfactorily visualized     | Stool covers the field of view             |
-| seq4_neg   | Reduced vascular pattern                  | Light reflections and a small amount of stool |
-| seq5_neg   | Reduced vascular pattern                  | Light reflections                          |
-| seq6_neg   | Normal vascular pattern                   | Light reflections; biopsy forceps          |
-| seq7_neg   | Normal vascular pattern                   | Very close to the luminal wall             |
-| seq8_neg   | Normal vascular pattern                   | Blurry; semi-opaque liquid; cap            |
-| seq9_neg   | Normal vascular pattern                   | Blurry; semi-opaque liquid; cap            |
-| seq10_neg  | Not possible to assess the mucosa        | Blurry; occluded                           |
-| seq11_neg  | Normal vascular pattern                   | Light reflections in the periphery; bubble on the lens |
-| seq12_neg  | Normal vascular pattern                   | Not a clean lens, mucosa covered by stool  |
-| seq13_neg  | Probably normal vascular pattern; Not possible to assess the mucosa | Air bubbles; remnant stool; too close to the mucosa, blur, reflections |
-| seq14_neg  | Clean bowel, normal vascular pattern      | Very close to the mucosa in all            |
-| seq15_neg  | Clean bowel, normal vascular pattern      | Some bubbles and light reflections        |
-| seq16_neg  | Clean bowel, normal vascular pattern      | Some bubbles and light reflection         |
-| seq17_neg  | Clean bowel, normal vascular pattern      | Very close to the mucosa in all            |
-| seq18_neg  | Clean bowel, normal vascular pattern, well distended | Some stool residues              |
-| seq19_neg  | Clean bowel, normal vascular pattern, well distended | Some liquid residues            |
-| seq20_neg  | Clean bowel, normal vascular pattern, well distended | Some stool residues and reflections |
-| seq21_neg  | Clean bowel, normal vascular pattern      | Very close, minor stool residues in last images |
-| seq22_neg  | Clean bowel, normal vascular pattern, well distended | Some liquid and stool residues, reflections |
-| seq23_neg  | Perfect clean bowel, normal vascular pattern, well distended | Some light reflections |
+
+| Sequence  | Description                                                         | Artifact                                                               |
+| ----------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| seq1_neg  | Normal vascular pattern                                             | Light reflections in the periphery; not clean lens                     |
+| seq2_neg  | Normal vascular pattern                                             | Contracted bowel; light reflections                                    |
+| seq3_neg  | Mucosa not satisfactorily visualized                                | Stool covers the field of view                                         |
+| seq4_neg  | Reduced vascular pattern                                            | Light reflections and a small amount of stool                          |
+| seq5_neg  | Reduced vascular pattern                                            | Light reflections                                                      |
+| seq6_neg  | Normal vascular pattern                                             | Light reflections; biopsy forceps                                      |
+| seq7_neg  | Normal vascular pattern                                             | Very close to the luminal wall                                         |
+| seq8_neg  | Normal vascular pattern                                             | Blurry; semi-opaque liquid; cap                                        |
+| seq9_neg  | Normal vascular pattern                                             | Blurry; semi-opaque liquid; cap                                        |
+| seq10_neg | Not possible to assess the mucosa                                   | Blurry; occluded                                                       |
+| seq11_neg | Normal vascular pattern                                             | Light reflections in the periphery; bubble on the lens                 |
+| seq12_neg | Normal vascular pattern                                             | Not a clean lens, mucosa covered by stool                              |
+| seq13_neg | Probably normal vascular pattern; Not possible to assess the mucosa | Air bubbles; remnant stool; too close to the mucosa, blur, reflections |
+| seq14_neg | Clean bowel, normal vascular pattern                                | Very close to the mucosa in all                                        |
+| seq15_neg | Clean bowel, normal vascular pattern                                | Some bubbles and light reflections                                     |
+| seq16_neg | Clean bowel, normal vascular pattern                                | Some bubbles and light reflection                                      |
+| seq17_neg | Clean bowel, normal vascular pattern                                | Very close to the mucosa in all                                        |
+| seq18_neg | Clean bowel, normal vascular pattern, well distended                | Some stool residues                                                    |
+| seq19_neg | Clean bowel, normal vascular pattern, well distended                | Some liquid residues                                                   |
+| seq20_neg | Clean bowel, normal vascular pattern, well distended                | Some stool residues and reflections                                    |
+| seq21_neg | Clean bowel, normal vascular pattern                                | Very close, minor stool residues in last images                        |
+| seq22_neg | Clean bowel, normal vascular pattern, well distended                | Some liquid and stool residues, reflections                            |
+| seq23_neg | Perfect clean bowel, normal vascular pattern, well distended        | Some light reflections                                                 |
 
 <i>Table 4. Negative sample sequence summarised attribute: Total of 23 sequences are provided as negative sample sequence for patients with no polyp during colonoscopy examination. These sequences depict different artifacts and varying visibility of vascular pattern and occlusion of mucosa.</i>
 
-![Fig6]()
+![Fig6](https://i.ibb.co/k8g3GsF/2023-09-19-212336.png)
 
 <i>Figure 6. Annotation quality review: Total curated frames along with accepted and rejected frame numbers during annotation quality review by experts for single frame data. Annotated frames with % of flat and protruded polyps categorised during annotation are also provided.</i>
 
