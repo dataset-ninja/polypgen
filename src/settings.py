@@ -13,8 +13,10 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = "PolypGen"
-PROJECT_NAME_FULL: str = "PolypGen"
+PROJECT_NAME: str = "PolypGen2021"
+PROJECT_NAME_FULL: str = (
+    "PolypGen: A Polyp Segmentation and Detection Generalisation Dataset from EndoCV2021 Challenge"
+)
 HIDE_DATASET = True  # set False when 100% sure about repo quality
 
 ##################################

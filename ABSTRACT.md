@@ -3,21 +3,21 @@ Polyps in the colon are widely known cancer precursors identified by colonoscopy
 PolypGen data was collected from 6 different centres. More than 300 unique patient videos/frames were used for this study. The general purpose of this diverse dataset is to allow robust design of deep learning models and their validation to assess their generalizability capability. In this context, authors have proposed different dataset configurations for training and out-of-sample validation and proposed unique generalization assessment metrics to reveal the strength of deep learning methods. Below authors provide a comprehensive description of dataset collection, annotation strategies and its quality, ethical guidelines and metric evaluation strategies.
 
 
-| Dataset                   | Findings                             | Size                               | Availability      |
-| --------------------------- | -------------------------------------- | ------------------------------------ | ------------------- |
-| Kvasir-SEG16              | Polyps                               | 1000 images†                      | Open academic     |
-| HyperKvasir17             | GI findings including polyps         | 110,079 images and 374 videos      | Open academic     |
-| Kvasir-Capsule18          | GI findings including polyps         | 4,741,504 images                   | Open academic     |
-| CVC-ColonDB19             | Polyps                               | 380 images††                     | By request•      |
-| ETIS-Larib Polyp DB20     | Polyps                               | 196 images†                       | Open academic     |
-| EDD202015, 21             | GI lesions including polyps          | 386 images                         | Open academic     |
-| CVC-ClinicDB22            | Polyps                               | 612 images†                       | Open academic     |
-| CVC-VideoClinicDB23       | Polyps                               | 11,954 images†                    | By request•      |
-| ASU-Mayo polyp database24 | Polyps                               | 18,781 images†                    | By request•      |
-| KID25                     | Angiectasia, bleeding, inflammations | 2371 images, 47 videos             | Open academic•   |
-| Atlas of GI Endoscope12   | GI lesions                           | 1295 images                        | Unknown•         |
-| El salvador atlas11       | GI lesions                           | 5071 video clips                   | Open academic♣️ |
-| PolypGen (Ours)26, 27     | Multi-centre colon polyps            | 1537 images†& 2225 video sequence | Open academic     |
+| Dataset                 | Findings                             | Size                               | Availability      |
+| ------------------------- | -------------------------------------- | ------------------------------------ | ------------------- |
+| Kvasir-SEG              | Polyps                               | 1000 images†                      | Open academic     |
+| HyperKvasir             | GI findings including polyps         | 110,079 images and 374 videos      | Open academic     |
+| Kvasir-Capsule          | GI findings including polyps         | 4,741,504 images                   | Open academic     |
+| CVC-ColonDB             | Polyps                               | 380 images††                     | By request•      |
+| ETIS-Larib Polyp DB     | Polyps                               | 196 images†                       | Open academic     |
+| EDD202015               | GI lesions including polyps          | 386 images                         | Open academic     |
+| CVC-ClinicDB            | Polyps                               | 612 images†                       | Open academic     |
+| CVC-VideoClinicDB       | Polyps                               | 11,954 images†                    | By request•      |
+| ASU-Mayo polyp database | Polyps                               | 18,781 images†                    | By request•      |
+| KID                     | Angiectasia, bleeding, inflammations | 2371 images, 47 videos             | Open academic•   |
+| Atlas of GI Endoscope   | GI lesions                           | 1295 images                        | Unknown•         |
+| El salvador atlas       | GI lesions                           | 5071 video clips                   | Open academic♣️ |
+| PolypGen                | Multi-centre colon polyps            | 1537 images†& 2225 video sequence | Open academic     |
 
 <i> Table 1. An overview of existing gastrointestinal (GI) lesion datasets including polyps: number of images or videos
 along with the availability type is provided. </i>
@@ -149,4 +149,4 @@ Each of these annotated masks were reviewed by expert gastroenterologists. Durin
 
 <i>Figure 6. Annotation quality review: Total curated frames along with accepted and rejected frame numbers during annotation quality review by experts for single frame data. Annotated frames with % of flat and protruded polyps categorised during annotation are also provided.</i>
 
-A sub-set of this dataset ( from C1 - C5 except C6) forms the dataset of our EndoCV2021 challenge28 (Addressing generalisability in polyp detection and segmentation) training data (https://endocv2021.grand-challenge.org), i.e., an event held in conjunction with the IEEE International Symposium on Biomedical Imaging (ISBI 2021), Nice, France. The current released data consists of additional positive and negative frames for both single and sequence data and a 6th centre data (C6). The presented version does not consists of training and test splits and users are free to apply their own strategies as applicable to the nature of their work. To access the complete dataset, users are requested to create a Synapse account (https://www.synapse.org/) and then the compiled dataset can be downloaded at (https://www.synapse.org/#!Synapse:syn45200214) 27 which has been published under Creative Commons 4.0 International (CC BY) licence. Dataset can only be used for educational and research purposed and must cite this paper. All collected data has been obtained through a written patient consent or through an ethical approval as tabulated in Table 2.
+A sub-set of this dataset ( from C1 - C5 except C6) forms the dataset of our EndoCV2021 challenge (Addressing generalisability in polyp detection and segmentation) [training data](https://endocv2021.grand-challenge.org), i.e., an event held in conjunction with the IEEE International Symposium on Biomedical Imaging (ISBI 2021), Nice, France. The current released data consists of additional positive and negative frames for both single and sequence data and a 6th centre data (C6). The presented version does not consists of training and test splits and users are free to apply their own strategies as applicable to the nature of their work. To access the complete dataset, users are requested to create a [Synapse account](https://www.synapse.org/) and then the compiled dataset can be downloaded at [source](https://www.synapse.org/#!Synapse:syn45200214) which has been published under Creative Commons 4.0 International (CC BY) licence. Dataset can only be used for educational and research purposed and must cite this paper. All collected data has been obtained through a written patient consent or through an ethical approval as tabulated in Table 2.
