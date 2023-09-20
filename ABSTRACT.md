@@ -52,7 +52,7 @@ Authors have provided both still image frames and continuous short video sequenc
 
 ![Fig.3](https://i.ibb.co/W3WS0sM/2023-09-19-205159.png)
 
-<i> Figure 3. Sample polyp annotations from each centre: Segmentation area with boundaries and corresponding bounding box/boxes overlaid images from all six centres. Samples include both small sized polyp (< 10000 pixels) including some flat polyp samples to large sized (≥ 40000 pixels) polyps and polyps during resection procedure such as polyps with blue dyes </i>
+<i> Figure 3. Sample polyp annotations from each centre: Segmentation area with boundaries and corresponding bounding box/boxes overlaid images from all six centres. Samples include both small sized polyp (< 10000 pixels) including some flat polyp samples to large sized (≥ 40000 pixels) polyps and polyps during resection procedure such as polyps with blue dyes. </i>
 
 ## Positive samples
 
