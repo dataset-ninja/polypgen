@@ -17,7 +17,7 @@ PROJECT_NAME: str = "PolypGen"
 PROJECT_NAME_FULL: str = (
     "PolypGen: A Polyp Segmentation and Detection Generalisation Dataset from EndoCV2021 Challenge"
 )
-HIDE_DATASET = True  # set False when 100% sure about repo quality
+HIDE_DATASET = False  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
@@ -77,7 +77,7 @@ AUTHORS: Optional[List[str]] = [
     "Dominique Lamarque",
     "Christian Daul",
     "Michael A. Riegler",
-    " Kim V. Anonsen",
+    "Kim V. Anonsen",
     "Andreas Petlund",
     "Pål Halvorsen",
     "Jens Rittscher",
@@ -87,15 +87,15 @@ AUTHORS: Optional[List[str]] = [
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
     "University of Leeds",
-    " University of Oxford",
+    "University of Oxford",
     "Oxford National Institute for Health Research Biomedical Research centre",
     "SimulaMet",
     " UiT The Arctic University of Norway",
     "Arab Academy for Science and Technology",
     "Veneto Institute of Oncology IOV-IRCCS",
-    ", Sahlgrenska University Hospital-Molnda",
+    "Sahlgrenska University Hospital-Molnda",
     "CRO Centro Riferimento Oncologico IRCCS Aviano Italy",
-    "1Universite de Versailles St-Quentin en Yvelines",
+    "Universite de Versailles St-Quentin en Yvelines",
     "University of Alexandria",
     "Universite de Lorraine and CNRS",
     "University of Gothenburg",
@@ -132,7 +132,7 @@ SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
 TAGS: Optional[List[str]] = None
 
 
-SECTION_EXPLORE_CUSTOM_DATASETS: Optional[List[str]] = ["positive"]
+SECTION_EXPLORE_CUSTOM_DATASETS: Optional[List[str]] = None
 
 ##################################
 ###### ? Checks. Do not edit #####
