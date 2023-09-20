@@ -13,7 +13,7 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = "PolypGen2021"
+PROJECT_NAME: str = "PolypGen"
 PROJECT_NAME_FULL: str = (
     "PolypGen: A Polyp Segmentation and Detection Generalisation Dataset from EndoCV2021 Challenge"
 )
@@ -30,6 +30,7 @@ CV_TASKS: List[CVTask] = [
     CVTask.InstanceSegmentation(),
     CVTask.SemanticSegmentation(),
     CVTask.ObjectDetection(),
+    CVTask.Classification(),
 ]
 ANNOTATION_TYPES: List[AnnotationType] = [CVTask.InstanceSegmentation()]
 
@@ -65,7 +66,7 @@ REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {
     "Alternative Kaggle Source": "https://www.kaggle.com/datasets/kokoroou/polypgen2021"
 }
 
-CITATION_URL: Optional[str] = "https://arxiv.org/abs/2106.04463"
+CITATION_URL: Optional[str] = "https://www.synapse.org/#!Synapse:syn26376615/wiki/613312"
 AUTHORS: Optional[List[str]] = [
     "Sharib Ali",
     "Debesh Jha",
@@ -126,12 +127,12 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
 SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
     "cases": ["positive", "negative"],
-    "__POSTTEXT__": "Also ***institute*** and ***sequence*** tags are included.",
+    "__POSTTEXT__": "Also ***institute*** and ***sequence*** tags are included",
 }
 TAGS: Optional[List[str]] = None
 
 
-SECTION_EXPLORE_CUSTOM_DATASETS: Optional[List[str]] = None
+SECTION_EXPLORE_CUSTOM_DATASETS: Optional[List[str]] = ["positive"]
 
 ##################################
 ###### ? Checks. Do not edit #####
