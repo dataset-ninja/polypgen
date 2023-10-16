@@ -1,6 +1,6 @@
 Dataset **PolypGen** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/G/X/jI/ZcjATJzh4l65FhHoM1SjbqQVPGRvLRLwaI36ECcWXrQDb0vxs25NbpPcG7ivNC0MGKj3z3eEFYdQlfOCc1eVqXYmsydrdGVETLguvzh6C7FbqySovHuPLa5zFo4T.tar)
+ [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/7/K/rT/GluU1xZ1LreIYYOfm2FFIBKha4tml7RCNoF4tMYzJdmrQ0ATPzPWYqe7PoJq0PxE5F41dd6SLtZZLz3k0dSzLlyYu7aAQeZfD44AA6BZlaxXbF3d0C4NJomZQ2Zs.tar)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
