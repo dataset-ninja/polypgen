@@ -19,8 +19,8 @@ PolypGen data was collected from 6 different centres. More than 300 unique patie
 | El salvador atlas       | GI lesions                           | 5071 video clips                   | Open academic♣️ |
 | PolypGen                | Multi-centre colon polyps            | 1537 images†& 2225 video sequence | Open academic     |
 
-<i> Table 1. An overview of existing gastrointestinal (GI) lesion datasets including polyps: the number of images or videos
-along with the availability type is provided. </i>
+<span style="font-size: smaller; font-style: italic;">Table 1. An overview of existing gastrointestinal (GI) lesion datasets including polyps: the number of images or videos
+along with the availability type is provided.</span>
 
 
 | Centre                                      | System info                    | Ethical approval          | Patient consenting type  |
@@ -32,7 +32,7 @@ along with the availability type is provided. </i>
 | John Radcliffe Hospital, Oxford, UK         | GIF-H260Z, EVIS Lucera CV260   | REC Ref: 16/YH/0247       | Universal consent        |
 | University of Alexandria, Alexandria, Egypt | Olympus Exera 160AL, 180AL     | NA                        | Written informed consent |
 
-<i> Table 2. Data collection information for each centre: Data acquisition system and patient consenting information. </i>
+<span style="font-size: smaller; font-style: italic;">Table 2. Data collection information for each centre: Data acquisition system and patient consenting information.</span>
 
 A consortium of six different medical data centres (hospitals) was built where each data centre provided videos and image frames from at least 50 unique patients. The videos and image samples were collected and sent by the senior gastroenterologists involved in this project. The collected dataset consisted of both polyp and normal mucosa colonoscopy acquisitions. To incorporate the nature of polyp occurrences and maintain heterogeneity in the data distribution, the following protocol was adhered to for establishing the dataset:
 
@@ -46,13 +46,14 @@ An overview of the number of samples comprising positive samples and negative sa
 ![Fig.2a](https://i.ibb.co/jgFskcW/Screenshot-2023-09-19-204404.png)
 ![Fig.2b](https://i.ibb.co/Wt405HD/Screenshot-2023-09-19-204417.png)
 
-<i> Figure 2. PolypGen dataset: (a) Positive (both single and sequence frames) and negative samples (sequence only) from each centre, and (b) polyp size-based histogram plot for positive samples showing variable-sized annotated polyps in the dataset (small is ≤ 100×100 pixels; medium is > 100×100 ≤ 200×200, and large is > 200×200 pixels). Null represents no polyp present in the sample. </i>
+<span style="font-size: smaller; font-style: italic;">Figure 2. PolypGen dataset: (a) Positive (both single and sequence frames) and negative samples (sequence only) from each centre, and (b) polyp size-based histogram plot for positive samples showing variable-sized annotated polyps in the dataset (small is ≤ 100×100 pixels; medium is > 100×100 ≤ 200×200, and large is > 200×200 pixels). Null represents no polyp present in the sample.</span>
+
 
 The authors have provided both still image frames and continuous short video sequence data with their corresponding annotations. The positive and negative samples in the dataset of the polyp generalisation (PolypGen) are further detailed below.
 
 ![Fig.3](https://i.ibb.co/W3WS0sM/2023-09-19-205159.png)
 
-<i> Figure 3. Sample polyp annotations from each centre: Segmentation area with boundaries and corresponding bounding box/boxes overlaid images from all six centres. Samples include both small-sized polyp (< 10000 pixels) including some flat polyp samples to large-sized (≥ 40000 pixels) polyps and polyps during the resection procedure such as polyps with blue dyes. </i>
+<span style="font-size: smaller; font-style: italic;">Figure 3. Sample polyp annotations from each centre: Segmentation area with boundaries and corresponding bounding box/boxes overlaid images from all six centres. Samples include both small-sized polyp (< 10000 pixels) including some flat polyp samples to large-sized (≥ 40000 pixels) polyps and polyps during the resection procedure such as polyps with blue dyes.</span>
 
 ## Positive samples
 
@@ -85,7 +86,7 @@ Positive samples consist of video frames from the patient with a diagnosed polyp
 | seq22    | Adenomas polyp                                      | Blurry image makes exact diagnosis impossible           |
 | seq23    | Serrated polyp                                      | Perfect clean mucosa, minor light reflections           |
 
-<i> Table 3. Positive sample sequence summarised attribute: Total of 23 sequences are provided as positive sample sequence for patients with polyp instances during colonoscopy examination. Here JNET refers to the Japan NBI Expert Team classification score. These sequences depict different-sized polyps and location with different artifacts and varying visibility. Sequences referring to one selected image is shown in Fig. 4. </i>
+<span style="font-size: smaller; font-style: italic;">Table 3. Positive sample sequence summarised attribute: Total of 23 sequences are provided as positive sample sequences for patients with polyp instances during colonoscopy examination. Here JNET refers to the Japan NBI Expert Team classification score. These sequences depict different-sized polyps and locations with different artefacts and varying visibility. Sequences referring to one selected image are shown in Fig. 4.</span>
 
 ## Negative samples
 
@@ -97,8 +98,8 @@ A team of 6 senior gastroenterologists (with over 20 years of experience in endo
 
 ![Fig4](https://i.ibb.co/HY49VYS/2023-09-19-210036.png)
 
-<i>Figure 4. Positive sequence data: Representative samples chosen from 23 sequences of the provided positive samples data.
-A summary description is provided in Table 3. Parts of the images have been cropped for visualization.</i>
+<span style="font-size: smaller; font-style: italic;">Figure 4. Positive sequence data: Representative samples chosen from 23 sequences of the provided positive samples data.
+A summary description is provided in Table 3. Parts of the images have been cropped for visualization.</span>
 
 - Clear raised polyps: Boundary pixels should include only protruded regions. Precaution has to be taken when delineating along the normal colon folds
 - Inked polyp regions: Only part of the non-inked appearing object delineation
@@ -108,7 +109,7 @@ A summary description is provided in Table 3. Parts of the images have been crop
 
 ![Fig5](https://i.ibb.co/tsm1jP1/2023-09-19-210319.png)
 
-<i>Figure 5. Negative sequence data: Representative samples chosen from each sequence of the provided negative sample data. A summary description is provided in Table 4. Parts of the images have been cropped for visualization.</i>
+<span style="font-size: smaller; font-style: italic;">Figure 5. Negative sequence data: Representative samples chosen from each sequence of the provided negative sample data. A summary description is provided in Table 4. Parts of the images have been cropped for visualization.</span>
 
 - Video sequence annotation: One sample from an expert gastroenterologist was provided for sequences that showed difficulty in distinguishing between mucosa and polyp. Polyps that are distant and not clearly visible were also not annotated as polyps.
 - Tackling with occlusion: Polyps that were occluded with stool or instrument were required to exclude the parts of mucosa that were obstructed.
@@ -143,10 +144,10 @@ Each of these annotated masks was reviewed by expert gastroenterologists. During
 | seq22_neg | Clean bowel, normal vascular pattern, well distended                | Some liquid and stool residues, reflections                            |
 | seq23_neg | Perfect clean bowel, normal vascular pattern, well distended        | Some light reflections                                                 |
 
-<i>Table 4. Negative sample sequence summarised attribute: Total of 23 sequences are provided as negative sample sequence for patients with no polyp during colonoscopy examination. These sequences depict different artefacts and varying visibility of vascular patterns and occlusion of the mucosa.</i>
+<span style="font-size: smaller; font-style: italic;">Table 4. Negative sample sequence summarised attribute: Total of 23 sequences are provided as negative sample sequences for patients with no polyp during colonoscopy examination. These sequences depict different artefacts and varying visibility of vascular patterns and occlusion of the mucosa.</span>
 
 ![Fig6](https://i.ibb.co/k8g3GsF/2023-09-19-212336.png)
 
-<i>Figure 6. Annotation quality review: Total curated frames along with accepted and rejected frame numbers during annotation quality review by experts for single-frame data. Annotated frames with % of flat and protruded polyps categorised during annotation are also provided.</i>
+<span style="font-size: smaller; font-style: italic;">Figure 6. Annotation quality review: Total curated frames along with accepted and rejected frame numbers during annotation quality review by experts for single-frame data. Annotated frames with % of flat and protruded polyps categorised during annotation are also provided</span>
 
 A subset of this dataset (from C1 - C5 except C6) forms the dataset of our EndoCV2021 challenge (Addressing generalisability in polyp detection and segmentation) [training data](https://endocv2021.grand-challenge.org), i.e., an event held in conjunction with the IEEE International Symposium on Biomedical Imaging (ISBI 2021), Nice, France. The current released data consists of additional positive and negative frames for both single and sequence data and a 6th centre data (C6). The presented version does not consist of training and test splits and users are free to apply their own strategies as applicable to the nature of their work. To access the complete dataset, users are requested to create a [Synapse account](https://www.synapse.org/) and then the compiled dataset can be downloaded at [source](https://www.synapse.org/#!Synapse:syn45200214) which has been published under Creative Commons 4.0 International (CC BY) licence. The dataset can only be used for educational and research purposes and must cite this paper. All collected data has been obtained through written patient consent or through ethical approval as tabulated in Table 2.
