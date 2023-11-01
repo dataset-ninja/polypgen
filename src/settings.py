@@ -63,7 +63,7 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 PAPER: Optional[Union[str, List[str], Dict[str, str]]] = "https://arxiv.org/abs/2106.04463"
 BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
 REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {
-    "Alternative Kaggle Source": "https://www.kaggle.com/datasets/kokoroou/polypgen2021"
+    "Kaggle": "https://www.kaggle.com/datasets/kokoroou/polypgen2021"
 }
 
 CITATION_URL: Optional[str] = "https://www.synapse.org/#!Synapse:syn26376615/wiki/613312"
@@ -84,44 +84,14 @@ AUTHORS: Optional[List[str]] = [
     "Thomas de Lange",
     "James E. East",
 ]
+AUTHORS_CONTACTS: Optional[List[str]] = ["s.s.ali@leeds.ac.uk"]
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
-    "University of Leeds",
-    "University of Oxford",
-    "Oxford National Institute for Health Research Biomedical Research centre",
-    "SimulaMet",
-    " UiT The Arctic University of Norway",
-    "Arab Academy for Science and Technology",
-    "Veneto Institute of Oncology IOV-IRCCS",
-    "Sahlgrenska University Hospital-Molnda",
-    "CRO Centro Riferimento Oncologico IRCCS Aviano Italy",
-    "Universite de Versailles St-Quentin en Yvelines",
-    "University of Alexandria",
-    "Universite de Lorraine and CNRS",
-    "University of Gothenburg",
-    "Augere Medical",
-    "Oslo Metropolitan University",
-    "Oslo University Hospital Ulleval",
-    "Northwestern University",
+    "UK-NOR-EGY-IT-SWE-FR-US joint research group",
+   
 ]
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
-    "https://www.leeds.ac.uk/",
-    "https://www.ox.ac.uk/",
-    "https://oxfordbrc.nihr.ac.uk/",
-    "https://www.simulamet.no/",
-    "https://en.uit.no/startsida",
-    "https://aast.edu/en/",
-    "https://www.ioveneto.it/en/about-the-iov/",
-    "https://www.sahlgrenska.se/en/",
-    "https://www.cro.sanita.fvg.it/it/",
-    "https://www.uvsq.fr/",
-    "https://alexu.edu.eg/index.php/en/",
-    "https://www.univ-lorraine.fr/en/univ-lorraine/",
-    "https://www.gu.se/en",
-    "https://augere.md/",
-    "https://www.oslomet.no/en/",
-    "https://oslo-universitetssykehus.no/oslo-university-hospital",
-    "https://www.northwestern.edu/",
+    "https://arxiv.org/pdf/2106.04463.pdf",
 ]
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
@@ -176,6 +146,7 @@ def get_settings():
     settings["repository"] = REPOSITORY
     settings["citation_url"] = CITATION_URL
     settings["authors"] = AUTHORS
+    settings["authors_contacts"] = AUTHORS_CONTACTS
     settings["organization_name"] = ORGANIZATION_NAME
     settings["organization_url"] = ORGANIZATION_URL
     settings["slytagsplit"] = SLYTAGSPLIT
